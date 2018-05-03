@@ -12,13 +12,8 @@ var totalScore = 0;
 var computerChoice = computerRandom();
 // End of Variable
 // ---
-// using jquery to display the random number
-$('#numRan').text(computerChoice); // ranom number to guess
-//
-$('#winsDiv').text(wins); // wins
-$('#lossesDiv').text(losses); // loses
-//
-$('#myPoints').text(totalScore); //usernumber
+
+
 
 
 
@@ -31,12 +26,11 @@ function computerRandom() {
   return Math.floor(Math.random() * (120 - 19 + 1)) + 19;
 }
 // main function
-function myFunction(doggyNum){
-  // var numberHolder = 0;
+function numAdder(doggyNum){
   totalScore += doggyNum;
-  // console.log('click');
-  // console.log(doggyNum);
   console.log('new total is ' + totalScore);
+  update();
+  compare(computerChoice, totalScore);
   return totalScore;
 }
 
@@ -44,24 +38,46 @@ function myFunction(doggyNum){
 $(document).ready(function(){
 //
   $("#dog1").on("click", function() {
-    console.log(dogChoice1);
-    myFunction(dogChoice1);
+    console.log('Dog 1: ' + dogChoice1);
+    numAdder(dogChoice1);
   });
   //
   $("#dog2").on("click", function() {
-    console.log(dogChoice2);
-      myFunction(dogChoice2);
+    console.log('Dog 2: ' + dogChoice2);
+      numAdder(dogChoice2);
   });
   //
   $("#dog3").on("click", function() {
-    console.log(dogChoice3);
-      myFunction(dogChoice3);
+    console.log('Dog 3: ' + dogChoice3);
+      numAdder(dogChoice3);
   });
   //
   $("#dog4").on("click", function() {
-    console.log(dogChoice4);
-      myFunction(dogChoice4);
+    console.log('Dog 4: ' + dogChoice4);
+      numAdder(dogChoice4);
   });
-
+//
 });
-
+//
+function update() {
+  // using jquery to display the random number
+  $('#numRan').text(computerChoice); // ranom number to guess
+  //
+  $('#winsDiv').text(wins); // wins
+  $('#lossesDiv').text(losses); // loses
+  //
+  $('#myPoints').text(totalScore); //usernumber
+}
+//
+function compare(compNum, playerNum) {
+  if(playerNum === compNum){
+    wins++;
+  } else if (playerNum > compNum){
+    losses++;
+    reset();// reset
+  }
+}
+//
+function reset() {
+  // do someting
+}
