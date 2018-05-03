@@ -5,21 +5,54 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link type='text/html' rel="stylesheet" href="style.css">
+  <!--  -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!--  -->
+  <link href="https://fonts.googleapis.com/css?family=Skranji" rel="stylesheet">
+  <!--  -->
+  <link type='text/css' rel="stylesheet" href="./assets/css/style.css">
   <title>Crystals Collector - Week 4 HW</title>
 </head>
 
 <body>
-  <div id="titleBlock" class="box">
+  <header id="titleBlock" class="box titleblock">
     <h1>Crystals Collector</h1>
+    <hr class="hrLine">
+  </header>
+  <!--  -->
+  <div id="infoBlock" class="box discription">
+    <p> Welcome to the Puppy Collector! This is an interactive game in which you will attempt to match your number of points
+      to the total points already displayed.</p>
+    <!--  -->
+    <p>The puppies below are assingned random values and when clicked, those values are added together.</p>
+    <!--  -->
+    <p>Do your best to match, but don' t go too high or you 'll lose all your valuable puppy points! GOOD LUCK!</p>
   </div>
-  <div id="infoBlock" class="box"></div>
-  <div id="numRan" class="box"></div>
-  <div id="scoreBlock" class="box"></div>
-  <div id="jemBlock" class="box"></div>
-  <div id="pointText" class="box"></div>
-  <div id="myPoints" class="box"></div>
-
+  <!--  -->
+  <div id="numRan" class="box">
+    <div>Score</div>
+  </div>
+  <!--  -->
+  <div id="scoreBlock" class="box scoreBox">
+    <div id="wins" class="sbStyle">Wins:
+      <div id="winsDiv"></div>
+    </div>
+    <div id="losses" class="sbStyle">Losses:
+      <div id="lossesDiv"></div>
+    </div>
+  </div>
+  <!--  -->
+  <div id="jemBlock" class="iconBox">
+    <img src="assets/images/dog-1.png" alt="dog-head-1" id="dog1" class="iconItem">
+    <img src="assets/images/dog-2.png" alt="dog-head-2" id="dog2" class="iconItem">
+    <img src="assets/images/dog-3.png" alt="dog-head-3" id="dog3" class="iconItem">
+    <img src="assets/images/dog-4.png" alt="dog-head-4" id="dog4" class="iconItem">
+  </div>
+  <!--  -->
+  <div id="pointText" class="box">Your total score is:
+    <div id="myPoints" class="box"></div>
+  </div>
+  <!--  -->
   <!--  -->
   <script src="./assets/javascript/script.js"></script>
 </body>

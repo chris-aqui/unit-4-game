@@ -1,5 +1,71 @@
+html {
+  background-color: #778899;
+  color: #dcdcdc;
+  /* background: radial-gradient(
+      circle,
+      transparent 20%,
+      slategray 20%,
+      slategray 80%,
+      transparent 80%,
+      transparent
+    ),
+    radial-gradient(
+        circle,
+        transparent 20%,
+        slategray 20%,
+        slategray 80%,
+        transparent 80%,
+        transparent
+      )
+      50px 50px,
+    linear-gradient(#a8b1bb 8px, transparent 8px) 0 -4px,
+    linear-gradient(90deg, #a8b1bb 8px, transparent 8px) -4px 0;
+  background-color: slategray;
+  background-size: 100px 100px, 100px 100px, 50px 50px, 50px 50px; */
+}
+/*  */
 body {
-  background: #00aa77;
-  background-image: url("zenbg-1.png"), url("zenbg-2.png");
-  background-repeat: repeat-x, repeat;
+  font-size: 18px;
+  font-family: "Skranji", cursive;
+}
+/*  */
+.titleblock {
+  text-align: center;
+  color: darkslateblue;
+}
+.hrLine {
+  width: 80%;
+  /* height: 5px; */
+  color: darkslateblue;
+}
+/*  */
+.scoreBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  /*  */
+}
+.sbStyle {
+  padding: auto 5px;
+  margin: auto 5px;
+}
+/*  */
+.iconBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  /*  */
+  /* background-color: black; */
+}
+.iconItem {
+  max-width: 100pt;
+  padding: 2px;
+  margin: 2px;
+  border: 3px solid blue;
+  /* width: 10%; */
 }
