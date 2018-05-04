@@ -36,10 +36,19 @@ function numAdder(doggyNum){
 
 //when page loads
 $(document).ready(function(){
+  //
+  $('#numRan').text(computerChoice); // ranom number to guess
 //
-  $("#dog1").on("click", function() {
-    console.log('Dog 1: ' + dogChoice1);
-    numAdder(dogChoice1);
+$("h1").hover(function(){
+  $('#h1Text').text('Puppy Collector!  =] ');
+  }, function(){
+  $('#h1Text').text('Crystals Collector');
+});
+
+//
+  $("#dog1").on("click", function() { // when clicked
+    console.log('Dog 1: ' + dogChoice1); // console log that
+    numAdder(dogChoice1); // call adder function and pass in dog1 num
   });
   //
   $("#dog2").on("click", function() {
