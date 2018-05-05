@@ -16,7 +16,7 @@ var computerChoice = computerRandom();
 // random() function will pick a random number for the dog icon
 function random() {
   return Math.floor(Math.random() * (12 - 1 + 1)) + 1;
-  console.log('');
+  // console.log('');
 }
 // computerRandom will set the random number that the player will have to guess
 function computerRandom() {
@@ -43,15 +43,16 @@ function compare(compNum, playerNum) {
   if (playerNum === compNum) {
     wins++;
     setTimeout(function () {
-      alert("Winner!");
+      alert("Winner!\n The random number was " + compNum + ' and the player guessed ' + playerNum);
       reset();
     }, 500);
-  } else if (playerNum > compNum) {
+  } else if ((playerNum > compNum) && (playerNum !== 0)) {
     losses++;
     setTimeout(function () {
-      alert("you lose");
+      alert("you lose!\n The random number was " + compNum + ' and the player guessed ' + playerNum);
       reset();
     }, 500);
+    // break;
   }
 }
 //
@@ -76,7 +77,7 @@ $(document).ready(function () {
   //
   // do some jquery
   $("h1").hover(function () {
-    $('#h1Text').text('Puppy Collector!  =]');
+    $('#h1Text').text('Puppy Rescue!  =]');
     $("#h1Text").css('color', 'white');
   }, function () {
     $('#h1Text').text('Crystals Collector');
