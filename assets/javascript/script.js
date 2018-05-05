@@ -13,10 +13,6 @@ var computerChoice = computerRandom();
 // End of Variable
 // ---
 
-
-
-
-
 // random() function will pick a random number for the dog icon
 function random() {
   return Math.floor(Math.random() * (12 - 1 + 1)) + 1;
@@ -26,7 +22,7 @@ function computerRandom() {
   return Math.floor(Math.random() * (120 - 19 + 1)) + 19;
 }
 // main function
-function numAdder(doggyNum){
+function numAdder(doggyNum) {
   totalScore += doggyNum;
   console.log('new total is ' + totalScore);
   update();
@@ -34,59 +30,77 @@ function numAdder(doggyNum){
   return totalScore;
 }
 
-//when page loads
-$(document).ready(function(){
-  //
-  $('#numRan').text(computerChoice); // ranom number to guess
-//
-$("h1").hover(function(){
-  $('#h1Text').text('Puppy Collector!  =] ');
-  }, function(){
-  $('#h1Text').text('Crystals Collector');
-});
-
-//
-  $("#dog1").on("click", function() { // when clicked
-    console.log('Dog 1: ' + dogChoice1); // console log that
-    numAdder(dogChoice1); // call adder function and pass in dog1 num
-  });
-  //
-  $("#dog2").on("click", function() {
-    console.log('Dog 2: ' + dogChoice2);
-      numAdder(dogChoice2);
-  });
-  //
-  $("#dog3").on("click", function() {
-    console.log('Dog 3: ' + dogChoice3);
-      numAdder(dogChoice3);
-  });
-  //
-  $("#dog4").on("click", function() {
-    console.log('Dog 4: ' + dogChoice4);
-      numAdder(dogChoice4);
-  });
-//
-});
-//
 function update() {
   // using jquery to display the random number
   $('#numRan').text(computerChoice); // ranom number to guess
-  //
   $('#winsDiv').text(wins); // wins
   $('#lossesDiv').text(losses); // loses
-  //
   $('#myPoints').text(totalScore); //usernumber
 }
 //
 function compare(compNum, playerNum) {
-  if(playerNum === compNum){
+  if (playerNum === compNum) {
     wins++;
-  } else if (playerNum > compNum){
+    setTimeout(function () {
+      alert("Winner!");
+      reset();
+    }, 500);
+  } else if (playerNum > compNum) {
     losses++;
-    reset();// reset
+    setTimeout(function () {
+      alert("you lose");
+      reset();
+    }, 500);
   }
 }
 //
 function reset() {
-  // do someting
+  console.log('you are resetting');
+  computerChoice = computerRandom();
+  dogChoice1 = random();
+  dogChoice2 = random();
+  dogChoice3 = random();
+  dogChoice4 = random();
+  totalScore = 0;
 }
+//  end
+
+//when page loads
+$(document).ready(function () {
+  reset();
+  update();
+  //
+  $('#numRan').text(computerChoice); // ranom number to guess
+  //
+  // do some jquery
+  $("h1").hover(function () {
+    $('#h1Text').text('Puppy Collector!  =]');
+    $("#h1Text").css('color', 'white');
+  }, function () {
+    $('#h1Text').text('Crystals Collector');
+    $("#h1Text").css('color', 'darkslateblue');
+  });
+  // do some more jquery
+  //
+  $("#dog1").on("click", function () { // when clicked
+    console.log('Dog 1: ' + dogChoice1); // console log that
+    numAdder(dogChoice1); // call adder function and pass in dog1 num
+  });
+  //
+  $("#dog2").on("click", function () {
+    console.log('Dog 2: ' + dogChoice2);
+    numAdder(dogChoice2);
+  });
+  //
+  $("#dog3").on("click", function () {
+    console.log('Dog 3: ' + dogChoice3);
+    numAdder(dogChoice3);
+  });
+  //
+  $("#dog4").on("click", function () {
+    console.log('Dog 4: ' + dogChoice4);
+    numAdder(dogChoice4);
+  });
+  //
+});
+//
