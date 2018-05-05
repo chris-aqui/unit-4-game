@@ -16,6 +16,7 @@ var computerChoice = computerRandom();
 // random() function will pick a random number for the dog icon
 function random() {
   return Math.floor(Math.random() * (12 - 1 + 1)) + 1;
+  console.log('');
 }
 // computerRandom will set the random number that the player will have to guess
 function computerRandom() {
@@ -62,6 +63,7 @@ function reset() {
   dogChoice3 = random();
   dogChoice4 = random();
   totalScore = 0;
+  update();
 }
 //  end
 
